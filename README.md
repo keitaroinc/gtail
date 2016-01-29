@@ -2,8 +2,6 @@
 
 A tool to tail Graylog logs in "real-time" using the Graylog REST API.
 
-**Note: This project is no longer actively developed.**
-
 ## Usage
 
 ### Watch all logs
