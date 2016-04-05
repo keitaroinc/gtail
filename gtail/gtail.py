@@ -111,34 +111,34 @@ def fetch_messages(server_config,
 # printing of the stream name
 def print_message(message, streams=None):
     s = []
-    if "timestamp" in message:
-        timestamp = message["timestamp"]
-        s.append(timestamp)
-    if streams and "streams" in message:
-        stream_ids = message["streams"]
-        stream_names = []
-        for sid in stream_ids:
-            stream_names.append(streams[sid]["title"])
-        s.append("[" + ", ".join(stream_names) + "]")
-    if "facility" in message:
-        facility = message["facility"]
-        s.append(facility)
-    if "level" in message:
-        level = message["level"]
-        s.append(level)
-    if "source" in message:
-        source = message["source"]
-        s.append(source)
-    if "loggerName" in message:
-        logger_name = message["loggerName"]
-        s.append(logger_name)
+#    if "timestamp" in message:
+#        timestamp = message["timestamp"]
+#        s.append(timestamp)
+#    if streams and "streams" in message:
+#        stream_ids = message["streams"]
+#        stream_names = []
+#        for sid in stream_ids:
+#            stream_names.append(streams[sid]["title"])
+#        s.append("[" + ", ".join(stream_names) + "]")
+#    if "facility" in message:
+#        facility = message["facility"]
+#        s.append(facility)
+#    if "level" in message:
+#        level = message["level"]
+#        s.append(level)
+#    if "source" in message:
+#        source = message["source"]
+#        s.append(source)
+#    if "loggerName" in message:
+#        logger_name = message["loggerName"]
+#        s.append(logger_name)
 
     if "full_message" in message:
         text = message["full_message"]
     else:
-        text = message["message"]
+        text = message["message"].rstrip('\n')
 
-    print bold(" ".join(map(str, s)))
+#    print bold(" ".join(map(str, s)))
     print text
 
 # config object and config parsing
